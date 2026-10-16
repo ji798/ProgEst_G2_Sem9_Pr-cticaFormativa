@@ -67,7 +67,8 @@ def ejecutar_menu():
         print("2. Atender siguiente")
         print("3. Deshacer última atención")
         print("4. Mostrar estado")
-        print("5. Salir")
+        print("5. Consultar siguiente")
+        print("0. Salir")
         opcion = input("Opción: ").strip()
 
         if opcion == "1":
@@ -75,13 +76,21 @@ def ejecutar_menu():
             asunto = input("Asunto: ")
             resultado = registrar_solicitud(cliente, asunto)
             print("Registrada:", resultado if resultado else "Datos inválidos")
+            
         elif opcion == "2":
             print("Atendida:", atender_siguiente())
+
         elif opcion == "3":
             print("Restaurada:", deshacer_ultima_atencion())
+
         elif opcion == "4":
             mostrar_estado()
+
         elif opcion == "5":
+            print("Siguiente:", consultar_siguiente())
+
+        elif opcion == "0":
+            print("Saliendo...")
             break
         else:
             print("Opción inválida")
