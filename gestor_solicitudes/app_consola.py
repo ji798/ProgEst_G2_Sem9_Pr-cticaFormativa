@@ -61,6 +61,15 @@ def consultar_siguiente():
 
 print("Siguiente:", consultar_siguiente())
 
+def buscar_solicitud(id_solicitud):
+    for solicitud in cola_pendientes:
+        if solicitud["id"] == id_solicitud:
+            return solicitud
+    for solicitud in pila_historial:
+        if solicitud["id"] == id_solicitud:
+            return solicitud
+    return None
+
 def ejecutar_menu():
     while True:
         print("\n1. Registrar solicitud")
